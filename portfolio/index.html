@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Vitor Sestrem | Sistemas de Informação & Analista de Suporte</title>
+  <meta name="description" content="Portfólio profissional de João Vitor Sestrem. Cursando Sistemas de Informação (8º semestre - UNIFEBE), Analista de Suporte na SDN, especialista em Migração de Dados, Implantação, Oracle PL/SQL, GLPI e ServiceNow." />
+  
+  <!-- Fontes: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#172554',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-zinc-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-200 antialiased font-sans selection:bg-blue-700 selection:text-white">
+
+  <!-- HEADER NAVEGAÇÃO -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-[#09090b]/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Logo / Nome -->
+      <a href="#inicio" class="flex items-center gap-2.5 font-bold text-base tracking-tight hover:text-blue-700 dark:hover:text-blue-400 transition-colors group">
+        <span class="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center text-xs font-extrabold tracking-tighter shadow-sm group-hover:scale-105 transition-transform">
+          JS
+        </span>
+        <span class="text-zinc-900 dark:text-white">João Vitor Sestrem</span>
+      </a>
+
+      <!-- Links Desktop -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+        <a href="#sobre" class="hover:text-blue-700 dark:hover:text-white transition-colors">Sobre</a>
+        <a href="#experiencia" class="hover:text-blue-700 dark:hover:text-white transition-colors">Experiência</a>
+        <a href="#formacao" class="hover:text-blue-700 dark:hover:text-white transition-colors">Formação</a>
+        <a href="#habilidades" class="hover:text-blue-700 dark:hover:text-white transition-colors">Habilidades</a>
+        <a href="#contato" class="hover:text-blue-700 dark:hover:text-white transition-colors">Contato</a>
+      </nav>
+
+      <!-- Ações rápidas -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Tema Dark/Light -->
+        <button id="themeToggle" aria-label="Alternar tema" class="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- Botão WhatsApp com Azul Mais Forte -->
+        <a href="https://wa.me/5548999729077" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-700 hover:bg-blue-800 text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Menu Mobile -->
+        <button id="mobileMenuBtn" aria-label="Menu" class="md:hidden p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Mobile -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#09090b] px-4 py-3 space-y-2">
+      <a href="#sobre" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Sobre</a>
+      <a href="#experiencia" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Experiência</a>
+      <a href="#formacao" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Formação</a>
+      <a href="#habilidades" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Habilidades</a>
+      <a href="#contato" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800">Contato</a>
+      <a href="https://wa.me/5548999729077" target="_blank" rel="noopener noreferrer" class="mobile-link flex items-center justify-center gap-2 w-full py-2.5 px-3 text-xs font-semibold rounded-lg bg-blue-700 hover:bg-blue-800 text-white mt-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL (LAYOUT EDITORIAL DIRETO) -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-20">
+
+    <!-- HERO / APRESENTAÇÃO PESSOAL COM A NOVA FOTO DO CURRÍCULO -->
+    <section id="inicio" class="pt-2 fade-in-up">
+      <div class="flex flex-col-reverse sm:flex-row items-center sm:items-start justify-between gap-8 md:gap-12">
+        
+        <!-- Texto & Apresentação -->
+        <div class="flex-1 space-y-4 text-center sm:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/80 text-blue-800 dark:text-blue-300">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span>São João Batista, SC • 22 anos</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
+            João Vitor Sestrem
+          </h1>
+
+          <p class="text-lg font-semibold text-blue-700 dark:text-blue-400">
+            Cursando Sistemas de Informação (8º semestre - UNIFEBE) &amp; Analista de Suporte
+          </p>
+
+          <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed text-sm sm:text-base">
+            Atuo com <strong>conversão e migração de dados para implantação de sistemas</strong>, configuração e parametrização sob medida e suporte técnico consultivo. Experiência em <strong>Banco de Dados Oracle (PL/SQL)</strong>, ferramentas de ITSM como <strong>GLPI</strong> e <strong>ServiceNow</strong>, unindo perfil técnico com comunicação assertiva.
+          </p>
+
+          <!-- Ações e Contato Imediato -->
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
+            <a href="https://wa.me/5548999729077" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Conversar no WhatsApp</span>
+            </a>
+            <a href="#contato" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white transition-all hover:-translate-y-0.5">
+              <i data-lucide="mail" class="w-4 h-4 text-blue-700 dark:text-blue-400"></i>
+              <span>Enviar E-mail</span>
+            </a>
+            <a href="tel:48999729077" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-700 dark:hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+              <span>(48) 99972-9077</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Nova Foto Real Atualizada do Currículo -->
+        <div class="shrink-0">
+          <div class="profile-photo-container relative w-40 h-52 sm:w-48 sm:h-64 rounded-2xl overflow-hidden border-2 border-blue-600/30 dark:border-blue-500/30 shadow-lg bg-zinc-100 dark:bg-zinc-900">
+            <img 
+              src="foto-perfil.jpg" 
+              alt="Foto profissional de João Vitor Sestrem" 
+              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" 
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 reveal-on-scroll">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+        <i data-lucide="user" class="w-4 h-4"></i>
+        <span>Sobre mim</span>
+      </div>
+      
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        Perfil &amp; Trajetória
+      </h2>
+
+      <div class="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm sm:text-base leading-relaxed">
+        <p>
+          Olá, me chamo <strong>João Vitor Sestrem</strong>, curso <strong>Sistemas de Informação (8º semestre na UNIFEBE)</strong>, apaixonado por tecnologia e movido pela vontade de aprender e pela determinação em alcançar meus objetivos.
+        </p>
+        <p>
+          Minha comunicação é uma de minhas principais habilidades, tanto para lidar com pessoas quanto com questões de negócios. Estou sempre em busca de inovação, tanto para a empresa quanto para meu próprio crescimento.
+        </p>
+      </div>
+
+      <!-- Dados resumidos em cartões limpos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-3">
+        
+        <div class="editorial-card p-3.5">
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Localização</div>
+          <div class="text-sm font-semibold text-zinc-900 dark:text-white mt-0.5">São João Batista, SC</div>
+          <div class="text-[11px] text-zinc-500 dark:text-zinc-400">Rua geral canudos</div>
+        </div>
+
+        <div class="editorial-card p-3.5 border-l-2 border-l-blue-600">
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Formação Superior</div>
+          <div class="text-sm font-semibold text-zinc-900 dark:text-white mt-0.5">Sistemas de Informação</div>
+          <div class="text-[11px] text-blue-700 dark:text-blue-400 font-semibold">UNIFEBE • 8º semestre</div>
+        </div>
+
+        <div class="editorial-card p-3.5">
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Cargo Atual</div>
+          <div class="text-sm font-semibold text-zinc-900 dark:text-white mt-0.5">Analista de Suporte</div>
+          <div class="text-[11px] text-zinc-500 dark:text-zinc-400">SDN sistema de gestão comercial</div>
+        </div>
+
+        <div class="editorial-card p-3.5">
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Especialidade</div>
+          <div class="text-sm font-semibold text-zinc-900 dark:text-white mt-0.5">Oracle PL/SQL &amp; Dados</div>
+          <div class="text-[11px] text-blue-700 dark:text-blue-400 font-medium">GLPI &amp; ServiceNow</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA PROFISSIONAL -->
+    <section id="experiencia" class="space-y-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 reveal-on-scroll">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+        <i data-lucide="briefcase" class="w-4 h-4"></i>
+        <span>Experiência Profissional</span>
+      </div>
+
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        Atuação no Mercado
+      </h2>
+
+      <div class="space-y-6">
+        
+        <!-- 1. SDN Sistema de Gestão Comercial -->
+        <div class="editorial-card p-6 border-l-4 border-l-blue-700">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 pb-3 border-b border-zinc-100 dark:border-zinc-800/80">
+            <div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Analista de Suporte</h3>
+              <div class="text-sm font-semibold text-blue-700 dark:text-blue-400">SDN sistema de gestão comercial</div>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-800 self-start sm:self-auto">
+              01/11/2024 até o momento (Atual)
+            </span>
+          </div>
+
+          <div class="pt-4 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <p class="font-semibold text-zinc-900 dark:text-white">Principais atividades:</p>
+            <ul class="space-y-1.5 list-disc list-inside leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Conversão e migração de dados:</strong> Processamento e transição de bases para implantação de sistemas;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Atendimento e suporte técnico ao cliente:</strong> Resolução de dúvidas e problemas operacionais com foco na agilidade e satisfação;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Implantação e configuração de sistemas:</strong> Parametrização e ajuste da plataforma conforme a necessidade de cada cliente;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Treinamento de usuários:</strong> Capacitação prática para a utilização do sistema, garantindo adaptação e melhor aproveitamento das funcionalidades.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Eximio -->
+        <div class="editorial-card p-6">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 pb-3 border-b border-zinc-100 dark:border-zinc-800/80">
+            <div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Estágio em Banco de Dados / TI</h3>
+              <div class="text-sm font-semibold text-blue-700 dark:text-blue-400">Eximio</div>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 self-start sm:self-auto">
+              01/06/2024 – até 25/10/2024
+            </span>
+          </div>
+
+          <div class="pt-4 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <p class="font-semibold text-zinc-900 dark:text-white">Principais atividades:</p>
+            <ul class="space-y-1.5 list-disc list-inside leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Estruturação de banco de dados:</strong> Criação de tabelas, implementação e modelagem de estrutura relacional;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Desenvolvimento de scripts:</strong> Criação e execução de scripts SQL e rotinas em PL/SQL Oracle;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Monitoramento:</strong> Acompanhamento de rotinas e integridade do banco de dados.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. MixConect -->
+        <div class="editorial-card p-6">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 pb-3 border-b border-zinc-100 dark:border-zinc-800/80">
+            <div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Comercial e Suporte</h3>
+              <div class="text-sm font-semibold text-blue-700 dark:text-blue-400">MixConect</div>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 self-start sm:self-auto">
+              03/01/2024 – 30/04/2024
+            </span>
+          </div>
+
+          <div class="pt-4 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+            <p class="font-semibold text-zinc-900 dark:text-white">Principais atividades:</p>
+            <ul class="space-y-1.5 list-disc list-inside leading-relaxed text-zinc-600 dark:text-zinc-400">
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Consultor de negócios e comercial:</strong> Prospecção, diagnóstico de demandas corporativas e apresentação de soluções;</li>
+              <li><strong class="text-zinc-800 dark:text-zinc-200">Atendimento ao cliente:</strong> Suporte consultivo e alinhamento de demandas para o público externo e interno.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO ACADÊMICA & CURSOS -->
+    <section id="formacao" class="space-y-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 reveal-on-scroll">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        <span>Formação Acadêmica &amp; Cursos</span>
+      </div>
+
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        Educação &amp; Qualificações
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Graduação UNIFEBE 8º semestre -->
+        <div class="editorial-card p-5 space-y-2 border-l-4 border-l-blue-700">
+          <div class="text-xs font-bold text-blue-700 dark:text-blue-400">Ensino Superior • UNIFEBE</div>
+          <h3 class="font-bold text-zinc-900 dark:text-white text-base">Sistemas de Informação</h3>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400">UNIFEBE Centro Universitário de Brusque</div>
+          <p class="text-xs text-zinc-600 dark:text-zinc-300 pt-1 font-medium">
+            <span class="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 text-[11px] font-bold mb-1">Cursando 8º semestre</span><br />
+            Formação sólida em engenharia de software, modelagem de banco de dados relacional, governança e sistemas empresariais.
+          </p>
+        </div>
+
+        <!-- Curso SENAI Sistemas -->
+        <div class="editorial-card p-5 space-y-2">
+          <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">SENAI (2020)</div>
+          <h3 class="font-bold text-zinc-900 dark:text-white text-base">Aprendizagem de Sistemas</h3>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400">Desde janeiro de 2020 a dezembro de 2020</div>
+          <p class="text-xs text-zinc-600 dark:text-zinc-300 pt-1">
+            Serviço Nacional de Aprendizagem Industrial. Lógica de programação, arquitetura e análise inicial de sistemas.
+          </p>
+        </div>
+
+        <!-- Curso SENAI Administrativo -->
+        <div class="editorial-card p-5 space-y-2">
+          <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">SENAI (2019)</div>
+          <h3 class="font-bold text-zinc-900 dark:text-white text-base">Assistente Administrativo</h3>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400">Desde janeiro de 2019 a dezembro de 2019</div>
+          <p class="text-xs text-zinc-600 dark:text-zinc-300 pt-1">
+            Serviço Nacional de Aprendizagem Industrial. Gestão de rotinas administrativas, comunicação empresarial e processos.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HABILIDADES & CONHECIMENTOS -->
+    <section id="habilidades" class="space-y-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 reveal-on-scroll">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+        <i data-lucide="layers" class="w-4 h-4"></i>
+        <span>Habilidades &amp; Ferramentas</span>
+      </div>
+
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        Conhecimentos Técnicos
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+        <!-- Bloco 1: Banco de Dados -->
+        <div class="editorial-card p-5 space-y-3">
+          <div class="flex items-center gap-2 font-bold text-zinc-900 dark:text-white text-sm">
+            <i data-lucide="database" class="w-4 h-4 text-blue-700 dark:text-blue-400"></i>
+            <span>Bancos de Dados &amp; SQL</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Modelagem, scripts, criação de tabelas e rotinas de migração.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="skill-pill featured">PLSQL e ORACLE</span>
+            <span class="skill-pill">Banco de Dados Relacional</span>
+            <span class="skill-pill">Migração de Dados</span>
+            <span class="skill-pill">Criação de Tabelas</span>
+            <span class="skill-pill">Desenvolvimento de Scripts</span>
+            <span class="skill-pill">Monitoramento</span>
+          </div>
+        </div>
+
+        <!-- Bloco 2: ITSM & Suporte -->
+        <div class="editorial-card p-5 space-y-3">
+          <div class="flex items-center gap-2 font-bold text-zinc-900 dark:text-white text-sm">
+            <i data-lucide="headphones" class="w-4 h-4 text-blue-700 dark:text-blue-400"></i>
+            <span>ITSM, Suporte &amp; Implantação</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Ferramentas de chamados, suporte consultivo e parametrização de ERP.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="skill-pill featured">GLPI</span>
+            <span class="skill-pill featured">ServiceNow</span>
+            <span class="skill-pill">Implantação de Sistemas</span>
+            <span class="skill-pill">Treinamento de Usuários</span>
+            <span class="skill-pill">Suporte Técnico</span>
+            <span class="skill-pill">Resolução de Incidentes</span>
+          </div>
+        </div>
+
+        <!-- Bloco 3: Tecnologias Web -->
+        <div class="editorial-card p-5 space-y-3">
+          <div class="flex items-center gap-2 font-bold text-zinc-900 dark:text-white text-sm">
+            <i data-lucide="code-2" class="w-4 h-4 text-blue-700 dark:text-blue-400"></i>
+            <span>Desenvolvimento &amp; Web</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Estruturação de aplicações, estilização e lógica de programação.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="skill-pill">Html</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Lógica de Programação</span>
+            <span class="skill-pill">Análise de Sistemas</span>
+          </div>
+        </div>
+
+        <!-- Bloco 4: Sistemas Operacionais & Produtividade -->
+        <div class="editorial-card p-5 space-y-3">
+          <div class="flex items-center gap-2 font-bold text-zinc-900 dark:text-white text-sm">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-700 dark:text-blue-400"></i>
+            <span>Ambientes, Ferramentas &amp; Negócios</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Sistemas operacionais, ferramentas corporativas e comunicação.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="skill-pill">Windows</span>
+            <span class="skill-pill">Linux</span>
+            <span class="skill-pill">Pacote Office</span>
+            <span class="skill-pill">Comunicação Assertiva</span>
+            <span class="skill-pill">Consultor de Negócios</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTATO DIRETO -->
+    <section id="contato" class="space-y-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 reveal-on-scroll">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        <span>Contato</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+            Entre em Contato
+          </h2>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+            Disponível para oportunidades, parcerias e novos desafios em tecnologia.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5548999729077" target="_blank" rel="noopener noreferrer" class="editorial-card p-5 hover:border-blue-700 transition-colors group">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950/70 text-blue-700 dark:text-blue-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">WhatsApp / Telefone</div>
+          <div class="text-base font-bold text-zinc-900 dark:text-white mt-0.5">(48) 99972-9077</div>
+          <div class="text-xs text-blue-700 dark:text-blue-400 font-semibold mt-2 inline-flex items-center gap-1">
+            Iniciar conversa &rarr;
+          </div>
+        </a>
+
+        <!-- E-mail -->
+        <div class="editorial-card p-5">
+          <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center mb-3">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+          </div>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">E-mail</div>
+          <div id="emailValue" class="text-sm font-bold text-zinc-900 dark:text-white mt-0.5 truncate">jv929995@gmail.com</div>
+          <button id="copyEmailBtn" class="text-xs text-blue-700 dark:text-blue-400 font-semibold mt-2 inline-flex items-center gap-1.5 hover:underline">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copyEmailText">Copiar e-mail</span>
+          </button>
+        </div>
+
+        <!-- Endereço Atualizado -->
+        <div class="editorial-card p-5">
+          <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 flex items-center justify-center mb-3">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+          </div>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Localização</div>
+          <div class="text-sm font-bold text-zinc-900 dark:text-white mt-0.5">São João Batista, SC</div>
+          <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-2">Rua geral canudos - Brasil</div>
+        </div>
+
+      </div>
+
+      <!-- Formulário de Mensagem Direta -->
+      <div class="editorial-card p-6 sm:p-8 mt-4">
+        <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-4">
+          Ou envie uma mensagem direta:
+        </h3>
+        
+        <form id="contactForm" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 mb-1">Seu Nome</label>
+              <input type="text" id="name" required placeholder="Como podemos te chamar?" class="w-full px-3.5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-700 transition-colors" />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 mb-1">Seu E-mail</label>
+              <input type="email" id="email" required placeholder="seuemail@empresa.com" class="w-full px-3.5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-700 transition-colors" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 mb-1">Mensagem</label>
+            <textarea id="message" rows="3" required placeholder="Olá João Vitor, gostaria de conversar sobre..." class="w-full px-3.5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-700 transition-colors resize-none"></textarea>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="submit" id="submitBtn" class="px-5 py-2.5 rounded-lg text-sm font-semibold bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-blue-700 dark:hover:bg-blue-700 dark:hover:text-white transition-all shadow-sm flex items-center gap-2">
+              <span>Enviar Mensagem</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+            <span id="formFeedback" class="hidden text-xs font-semibold text-blue-700 dark:text-blue-400">
+              Mensagem processada! Entrarei em contato.
+            </span>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ SÓBRIO -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 py-8 bg-zinc-50 dark:bg-[#09090b]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
+      <div>
+        <strong>João Vitor Sestrem</strong> • São João Batista, SC • <span id="currentYear"></span>
+      </div>
+      <div>
+        Sistemas de Informação (8º sem. UNIFEBE) • Analista de Suporte
+      </div>
+      <a href="#inicio" class="p-1.5 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors" aria-label="Voltar ao início">
+        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
